@@ -10,8 +10,8 @@ function myReverse(str) {
 //Question 2
 function allCombinations(str) {
   let arr1 = [];
-  for (let i = 0; i < s.length; i++) {
-    for (let j = i; j < s.length; j++) {
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i; j < str.length; j++) {
       arr1.push(s.slice(i, j + 1));
     }
   }
