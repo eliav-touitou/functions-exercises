@@ -9,44 +9,13 @@ function myReverse(str) {
 
 //Question 2
 function allCombinations(str) {
-  //   let array1 = [];
-  //   for (let x = 0, y = 1; x < str.length; x++, y++) {
-  //     array1[x] = str.slice(x, y);
-  //   }
-  //   let final = [];
-  //   let temp = "";
-  //   let math = Math.pow(2, array1.length);
-
-  //   for (let i = 0; i < math; i++) {
-  //     temp = "";
-  //     for (let j = 0; j < array1.length; j++) {
-  //       if (i & Math.pow(2, j)) {
-  //         temp += array1[j];
-  //       }
-  //     }
-  //     if (temp !== "") {
-  //       final.push(temp);
-  //     }
-  //   }
-  //   return final.join(", ");
-  // }var lenStr = str.length;
-  var result = [];
-  var indexCurrent = 0;
-
-  while (indexCurrent < lenStr) {
-    var char = str.charAt(indexCurrent);
-    var x;
-    var arrTemp = [char];
-
-    for (x in result) {
-      arrTemp.push("" + result[x] + char);
+  let arr1 = [];
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i; j < s.length; j++) {
+      arr1.push(s.slice(i, j + 1));
     }
-    result = result.concat(arrTemp);
-
-    indexCurrent++;
   }
-
-  return result;
+  return arr1;
 }
 
 //Question 3
