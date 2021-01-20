@@ -12,7 +12,7 @@ function allCombinations(str) {
   let arr1 = [];
   for (let i = 0; i < str.length; i++) {
     for (let j = i; j < str.length; j++) {
-      arr1.push(s.slice(i, j + 1));
+      arr1.push(str.slice(i, j + 1));
     }
   }
   return arr1;
