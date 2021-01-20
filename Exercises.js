@@ -9,13 +9,44 @@ function myReverse(str) {
 
 //Question 2
 function allCombinations(str) {
-  let combinations = [];
-  for (let i = 0; i < str.length; i++) {
-    for (let j = 0; j < str.length; j++) {
-      combinations.push(str.slice(i, j));
+  //   let array1 = [];
+  //   for (let x = 0, y = 1; x < str.length; x++, y++) {
+  //     array1[x] = str.slice(x, y);
+  //   }
+  //   let final = [];
+  //   let temp = "";
+  //   let math = Math.pow(2, array1.length);
+
+  //   for (let i = 0; i < math; i++) {
+  //     temp = "";
+  //     for (let j = 0; j < array1.length; j++) {
+  //       if (i & Math.pow(2, j)) {
+  //         temp += array1[j];
+  //       }
+  //     }
+  //     if (temp !== "") {
+  //       final.push(temp);
+  //     }
+  //   }
+  //   return final.join(", ");
+  // }var lenStr = str.length;
+  var result = [];
+  var indexCurrent = 0;
+
+  while (indexCurrent < lenStr) {
+    var char = str.charAt(indexCurrent);
+    var x;
+    var arrTemp = [char];
+
+    for (x in result) {
+      arrTemp.push("" + result[x] + char);
     }
+    result = result.concat(arrTemp);
+
+    indexCurrent++;
   }
-  return combinations;
+
+  return result;
 }
 
 //Question 3
@@ -37,14 +68,27 @@ function myPower(x, n) {
 }
 //Question 5
 function getFirstNotRepeating(str) {
-  // your code here
-  return "";
+  for (let i = 0; i < str.length; i++) {
+    let actual = str.charAt(i);
+    if (str.indexOf(actual) == str.lastIndexOf(actual)) {
+      return actual;
+    }
+  }
 }
 
 //Question 6 (Bonus)
 function isPrefectNumber(num) {
-  // your code here
-  return "I'm not interested in the bonus question :(";
+  let num2 = 0;
+  for (let i = 1; i < num; i++) {
+    if (num % i == 0) {
+      num2 += i;
+    }
+  }
+  if (num2 == num) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // *** Playground ***
